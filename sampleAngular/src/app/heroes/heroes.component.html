@@ -1,0 +1,21 @@
+<div>
+  <p>
+    {{hero.name | uppercase}}
+    heroes works!
+  </p>
+  <input [(ngModel)]="hero.name" placeholder="name">
+  <div>
+    <ul class="heroes">
+      <li *ngFor="let hero of heroes" (click)="onSelected(hero)">
+        <span class="badge">{{hero.id}}</span> {{hero.name}}
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="selectedHero">selected hero{{selectedHero.name}}</div>
+  <div>
+    <textarea style="width: 200px;height: 100px;" [(ngModel)]="insertJsonString"></textarea>
+  </div>
+  <div>
+    <input type="button" value="insert" />
+  </div>
+</div>
